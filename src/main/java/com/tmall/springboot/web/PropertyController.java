@@ -59,4 +59,11 @@ public class PropertyController {
         return ResultUtil.success();
     }
 
+    @GetMapping("/properties/cid")
+    public Msg propertiesCid(@RequestParam(value = "cid") int cid) throws Exception {
+       List<Property> ps =  propertyMapper.findAllWithCid(cid);
+
+       return ResultUtil.success(ps);
+    }
+
 }

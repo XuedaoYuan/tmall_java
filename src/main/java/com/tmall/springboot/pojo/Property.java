@@ -1,12 +1,12 @@
 package com.tmall.springboot.pojo;
 
 public class Property {
+
     private Integer id;
     private Integer cid;
     private String name;
+    private Category category; /*非数据库字段*/
 
-    /*非数据库字段*/
-    private Category category;
 
     public void setId(Integer id) {
         this.id = id;

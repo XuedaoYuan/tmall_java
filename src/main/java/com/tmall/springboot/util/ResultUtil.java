@@ -9,6 +9,13 @@ public class ResultUtil {
         msg.setSuccess(success);
         return msg;
     }
+    public static Msg success(Object object){
+        Msg msg = new Msg();
+        msg.setData(object);
+        msg.setMessage("");
+        msg.setSuccess(true);
+        return msg;
+    }
     public static Msg success(){
         Msg msg = new Msg();
         msg.setMessage("");
