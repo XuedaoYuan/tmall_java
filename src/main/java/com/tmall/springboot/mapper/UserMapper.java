@@ -14,20 +14,16 @@ public interface UserMapper {
     @Select("select id,name from user")
     List<User> list();
 
-    @Select("select id,name from user where id=#{id}")
+    @Select("select * from user where id=#{id}")
     public User get(Integer id);
+     /*
 
-    /*
-    * 注册
-    * */
     @Insert("insert into user (name, password) VALUES (#{name, #{password}})")
     public void add(User user);
 
-    /*
-    * 修改用户信息
-    * */
+
     @Update("update user set name=#{name}, password=#{password} where id=#{id}")
-    public void update(User user);
+    public void update(User user);*/
 
 
 }

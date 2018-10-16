@@ -8,6 +8,7 @@ import com.tmall.springboot.pojo.User;
 import com.tmall.springboot.util.Msg;
 import com.tmall.springboot.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +16,10 @@ import java.util.List;
 @RestController
 public class UserController {
     @Autowired UserMapper userMapper;
+
+//    来自配置文件的配置
+    @Value(value="${tmall.secret}")
+    public String secret2;
 
     /*
     * 后台查询用户
@@ -31,31 +36,14 @@ public class UserController {
         return ResultUtil.success(page);
     }
 
-    /*
-    * 查询单个用户
-    * */
-    @GetMapping("/userById")
-    public Msg get(
-            @RequestParam int id
-    ){
-        User user = userMapper.get(id);
-        return ResultUtil.success(user);
+    @GetMapping("/userid")
+    public Msg getById(@RequestParam  int id){
+        User u = userMapper.get(id);
+        u.setName(secret2);
+        return ResultUtil.success(u);
     }
 
-    /*
-    * 注册
-    * */
-    @PostMapping("/user")
-    public Msg signUp(@RequestBody User user){
-        userMapper.add(user);
-        return ResultUtil.success();
-    }
-    /*
-    * 登录
-    * */
-    @PostMapping("/login")
-    public Msg login(@RequestBody User user){
 
-        return ResultUtil.success();
-    }
+
+
 }
