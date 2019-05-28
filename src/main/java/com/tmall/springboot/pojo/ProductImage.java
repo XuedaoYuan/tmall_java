@@ -5,7 +5,7 @@ public class ProductImage {
     private Integer id;
     private Integer pid;
     private String type;
-    private String  image;
+    private String image;
 
     public void setId(Integer id) {
         this.id = id;

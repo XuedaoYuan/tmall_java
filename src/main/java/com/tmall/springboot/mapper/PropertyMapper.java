@@ -12,6 +12,7 @@ public interface PropertyMapper {
     @Select("select * from property")
     List<Property> findAll();
 
+    /*根据分类Id查询*/
     @Select("select * from property where cid=#{cid}")
     List<Property> findByCid(int cid);
 
@@ -24,7 +25,7 @@ public interface PropertyMapper {
             one=@One(select = "com.tmall.springboot.mapper.CategoryMapper.get")
             )
     })
-    List<Property> findAllWithCid(int cid); //根据cid同时查出这个类
+    List<Property> findAllWithCid(int cid); //根据cid同时查出这个分类
 
     @Select("select * from property where id=#{id}")
     public Property get(Integer id);

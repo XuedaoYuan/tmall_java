@@ -9,7 +9,7 @@ import java.util.List;
 public interface CategoryMapper {
 
     @Select("select * from category")
-    List<Category> findAll();
+    public List<Category> findAll();
 
     @Insert("insert into category (name) values (#{name})")
     public void save(Category category);

@@ -9,8 +9,17 @@ import java.util.List;
 @Mapper
 public interface ProductImageMapper {
 
+    /*
+    * 根据pid查询
+    * */
     @Select("select * from productimage where pid=#{pid}")
     List<ProductImage> findByPid(Integer pid);
+
+    /*
+    * 根据pid找出单个图片
+    * */
+    @Select("select * from productimage where pid=#{pid} and type='type_single'")
+    List<ProductImage> findSingleByPid(Integer pid);
 
     /*
     * 新增

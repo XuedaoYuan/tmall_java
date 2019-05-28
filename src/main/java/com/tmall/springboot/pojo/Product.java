@@ -21,6 +21,9 @@ public class Product {
     /*产品所属的类别 非数据库字段*/
     private Category category;
 
+    /*产品图片*/
+    private ProductImage firstProductImage;
+
     public Timestamp getCreateDate() {
         return createDate;
     }
@@ -32,7 +35,6 @@ public class Product {
     public Integer getId() {
         return id;
     }
-
 
 
     public void setId(Integer id) {
@@ -94,5 +96,13 @@ public class Product {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public void setFirstProductImage(ProductImage firstProductImage) {
+        this.firstProductImage = firstProductImage;
+    }
+
+    public ProductImage getFirstProductImage() {
+        return firstProductImage;
     }
 }

@@ -24,7 +24,6 @@ import javax.servlet.http.HttpServletRequest;
 public class ProductImageController {
     @Autowired
     ProductImageMapper productImageMapper;
-
     /*
      * 分页查询
      * */

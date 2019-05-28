@@ -26,7 +26,7 @@ public class CategoryController {
             @RequestParam(value = "limit", defaultValue = "5") int limit
     ) throws Exception {
 
-        PageHelper.startPage(start, limit, "id desc");
+        PageHelper.startPage(start, limit,"id desc");
 
         List<Category> cs = categoryMapper.findAll();
 

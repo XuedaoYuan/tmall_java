@@ -29,7 +29,7 @@ public class UserController {
             @RequestParam(value = "start", defaultValue = "1") int start,
             @RequestParam(value = "limit", defaultValue = "5") int limit
     ){
-        PageHelper.startPage(start, limit, "id desc");
+        PageHelper.startPage(start, limit, "id asc");
         List<User> us = userMapper.list();
         PageInfo<User> page = new PageInfo<>(us);
 

@@ -3,6 +3,7 @@ package com.tmall.springboot.pojo;
 public class Category {
     private int id;
     private String name;
+    private String imageUrl;
 
     public void setId(int id) {
         this.id = id;
@@ -10,6 +11,14 @@ public class Category {
 
     public int getId() {
         return id;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {
@@ -22,7 +31,7 @@ public class Category {
 
     @Override
     public String toString() {
-        return "Category [id="+id+", name="+name+"]";
+        return "Category [id=" + id + ", name=" + name + "]";
 //        String.format("Category [id=%d, name=%s]", id, name);
     }
 }
